@@ -1,6 +1,6 @@
 resource "aws_instance" "dev" {
 
-  ami = "ami-0d03cb826412c6b0f"
-  instance_type = "t2.micro"
-  key_name = "newkey"
+  ami = var.ami_id
+  instance_type = var.instance_type
+  key_name = var.key_name
 }
