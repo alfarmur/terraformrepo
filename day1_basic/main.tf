@@ -4,15 +4,15 @@ resource "aws_instance" "dev" {
   instance_type = var.instance_type
   key_name      = var.key_name
 
-  tags = { name = "test"}
 }
 
-resource "aws_dynamodb_table" "dynamodb_terraform" {
-  name = "terraform_state_lock"
-  hash_key = "lock_id"
-  read_capacity = 20
-  write_capacity = 20
-  attribute {
-    name = "lock_id"
-  }
-}
+# resource "aws_dynamodb_table" "dynamodb_terraform" {
+#   name = "terraform_state_lock_dynamo"
+#   hash_key = "LockID"
+#   read_capacity = 20
+#   write_capacity = 20
+#   attribute {
+#     name = "LockID"
+#     type = "S"
+#   }
+# }
